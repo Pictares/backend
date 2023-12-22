@@ -1,7 +1,11 @@
-import bcrypt from 'bcryptjs'
-import jwt from 'jsonwebtoken'
-import config from '../config.js'
-import AuthService from '../Services/AuthService.js'
+// import bcrypt from 'bcryptjs'
+const bcrypt = require('bcryptjs')
+// import jwt from 'jsonwebtoken'
+const jwt = require('jsonwebtoken')
+// import config from '../config.js'
+const { secret } = require('../config.js')
+// import AuthService from '../Services/AuthService.js'
+const AuthService = require('../Services/AuthService.js')
 
 const generateAccessToken = (id, role) => {
   const payload = {
@@ -9,7 +13,7 @@ const generateAccessToken = (id, role) => {
     role,
   }
 
-  return jwt.sign(payload, config.secret, { expiresIn: '24h' })
+  return jwt.sign(payload, secret, { expiresIn: '24h' })
 }
 
 class AuthController {
@@ -60,4 +64,4 @@ class AuthController {
   }
 }
 
-export default new AuthController()
+module.exports = new AuthController()

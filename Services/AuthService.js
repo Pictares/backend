@@ -1,5 +1,7 @@
-import bcrypt from 'bcryptjs'
-import mysql from 'mysql'
+// import bcrypt from 'bcryptjs'
+const bcrypt = require('bcryptjs')
+// import mysql from 'mysql'
+const mysql = require('mysql')
 
 const connection = mysql.createConnection({
   host: 'localhost',
@@ -45,4 +47,4 @@ class AuthService {
   }
 }
 
-export default new AuthService()
+module.exports = new AuthService()

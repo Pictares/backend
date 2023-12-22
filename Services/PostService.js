@@ -1,5 +1,7 @@
-import mysql from 'mysql'
-import fileService from './FileService.js'
+// import mysql from 'mysql'
+const mysql = require('mysql')
+// import fileService from './FileService.js'
+const fileService = require('./FileService.js')
 
 const connection = mysql.createConnection({
   host: 'localhost',
@@ -84,4 +86,4 @@ class PostService {
   }
 }
 
-export default new PostService()
+module.exports = new PostService()

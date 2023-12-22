@@ -1,4 +1,5 @@
-import PostService from '../Services/PostService.js'
+// import PostService from '../Services/PostService.js'
+const PostService = require('../Services/PostService.js')
 
 class PostController {
   async create(req, res) {
@@ -77,4 +78,4 @@ class PostController {
   }
 }
 
-export default new PostController()
+module.exports = new PostController()

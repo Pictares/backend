@@ -1,10 +1,15 @@
-import express from 'express'
-import postRouter from './routers/postRouter.js'
-import authRouter from './routers/authRouter.js'
-import fileUpload from 'express-fileupload'
-import path from 'path'
+// import express from 'express'
+const express = require('express')
+// import postRouter from './routers/postRouter.js'
+const postRouter = require('./routers/postRouter.js')
+// import authRouter from './routers/authRouter.js'
+const authRouter = require('./routers/authRouter.js')
+// import fileUpload from 'express-fileupload'
+const fileUpload = require('express-fileupload')
+// import path from 'path'
+const path = require('path')
 
-const __dirname = path.resolve()
+// const __dirname = path.resolve()
 const PORT = process.env.PORT | 5000
 
 const app = express()

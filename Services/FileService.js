@@ -1,5 +1,7 @@
-import * as uuid from 'uuid'
-import * as path from 'path'
+// import * as uuid from 'uuid'
+const uuid = require('uuid')
+// import * as path from 'path'
+const path = require('path')
 
 class FileService {
   saveFile(file) {
@@ -14,4 +16,4 @@ class FileService {
   }
 }
 
-export default new FileService()
+module.exports = new FileService()
